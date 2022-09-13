@@ -1,12 +1,13 @@
-<mat-card class="event-card">
-    <mat-card-header>
+<mat-card class="event-card mat-elevation-z4">
+    <mat-card-header class="event-card-header">
         <div mat-card-avatar class="avatar-image"></div>
-        <mat-card-title> {{ event.title }} </mat-card-title>
+        <mat-card-subtitle class="event-title"> {{ event.title }} </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src={{event.flyerFront}} alt="">
+    <img mat-card-image src={{event.flyerFront}}
+        onerror="this.onerror=null;this.src='../../assets/no_image_available.png' " alt="">
     <mat-card-content>
 
-        <a href={{event.venue.direction}} target="_blank">
+        <a href={{event.venue.direction}} target=" _blank">
             <p> <img class="google-maps-pin" src="../../assets/google_maps_pin.png"> {{ event.venue.name }}</p>
         </a>
         <p>| Starts: {{ startDate.date}} {{startDate.time}}</p>

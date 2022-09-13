@@ -6,6 +6,7 @@ export function dateStringToDoubleDigitTime(dateString: string): string {
 }
 
 export function dateStringToEuropeanDate(dateString: string): string {
+  console.log(dateString);
   let dateArray = dateString.split('T')[0].split('-');
 
   return `${dateArray[2]}.${dateArray[1]}.${dateArray[0]}`;

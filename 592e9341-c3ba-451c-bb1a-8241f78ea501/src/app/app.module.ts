@@ -7,6 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
@@ -15,6 +17,8 @@ import { EventListComponent } from './event-list/event-list.component';
     BrowserModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatGridListModule,
+    FlexLayoutModule,
     HttpClientModule,
   ],
   providers: [],

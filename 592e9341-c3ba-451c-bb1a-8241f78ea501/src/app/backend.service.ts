@@ -6,7 +6,9 @@ import { retry, catchError } from 'rxjs/operators';
 import { apiUrl } from './config.service';
 import { Event } from '../models/event';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BackendService {
   constructor(private http: HttpClient) {}
 
@@ -22,6 +24,7 @@ export class BackendService {
       .get<Event>(apiUrl)
       .pipe(retry(1), catchError(this.handleError));
   }
+
   //Error Handling
   handleError(error: any) {
     let errorMessage = '';
