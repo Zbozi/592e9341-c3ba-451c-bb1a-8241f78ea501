@@ -3,7 +3,7 @@ import { Event } from '../../models/event';
 import {
   dateStringToDoubleDigitTime,
   dateStringToEuropeanDate,
-} from '../helpers';
+} from '../helpers.service';
 
 @Component({
   selector: 'event-view',
