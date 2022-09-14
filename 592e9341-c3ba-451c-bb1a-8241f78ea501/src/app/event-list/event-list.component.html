@@ -5,7 +5,6 @@
     </div>
     <!-- Event llist that hides when there is no event-->
     <div *ngIf="events.length !==0">
-        {{events}}c
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let currentEvent of events">
                 <event [event]="currentEvent"></event>
