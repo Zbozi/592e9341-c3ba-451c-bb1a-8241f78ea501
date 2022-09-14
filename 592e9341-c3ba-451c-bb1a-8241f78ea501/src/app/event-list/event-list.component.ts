@@ -19,7 +19,7 @@ export class EventListComponent implements OnInit {
     //load events object
     //parse events to Event Array
     //store/cache event array => im Appmodule?
-    return this.api.getEvents().subscribe((data: {}) => {
+    return this.api.getAllEvents().subscribe((data: {}) => {
       this.events = data;
     });
   }
