@@ -1,0 +1,29 @@
+<div class="event-list">
+    <!-- Show that no events exit-->
+    <div class="no-data text-center" *ngIf="!events$">
+        <p>No Events listed!</p>
+    </div>
+    <!-- Event llist that hides when there is no event
+    <div *ngIf="events$">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let event of events$ | async">
+                <event [event]="event"></event>
+            </div>
+        </div>
+
+    </div>
+    -->
+    <div *ngIf="groupedEvents">
+        <div>
+            <div *ngFor="let group of groupedEvents | async | keyvalue">
+                <h2> {{group.key | date: 'fullDate'}}</h2>
+                <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                    <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let event of group.value">
+                        <event [event]="event"></event>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

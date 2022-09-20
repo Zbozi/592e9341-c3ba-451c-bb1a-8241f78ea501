@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map, groupBy } from 'rxjs/operators';
 
-import { apiUrl } from './config.service';
-import { Event } from '../models/event';
+import { apiUrl } from '../config.service';
+import { Event } from './store/models/event';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BackendService {
-  public resultData = [];
+export class EventsService {
+  public events: Observable<Event[]>;
 
   constructor(private http: HttpClient) {}
 
@@ -20,18 +20,28 @@ export class BackendService {
       .get<Event[]>(apiUrl)
       .pipe(retry(1), catchError(this.handleError))
       .pipe(
-        map((results) => results.sort((e1, e2) => (e1.date < e2.date ? -1 : 1)))
+        map((results) =>
+          results.sort((e1, e2) =>
+            new Date(e1.date) < new Date(e2.date) ? -1 : 1
+          )
+        )
       );
   }
 
-  groupBy(events: Event[]) {
+  get() {
+    return this.http.get<Event[]>(apiUrl);
+  }
+
+  groupByDate(events: Event[]) {
     let data = new Set(events.map((item) => new Date(item.date)));
+    let resultData = [];
     data.forEach((date) => {
-      this.resultData.push({
+      resultData.push({
         date: date,
         products: events.filter((i) => new Date(i.date) === date),
       });
     });
+    return resultData;
   }
 
   //Error Handling

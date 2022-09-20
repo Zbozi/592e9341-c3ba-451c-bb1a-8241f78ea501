@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Event } from '../../models/event';
+import { Event } from '../store/models/event';
 import {
   dateStringToDoubleDigitTime,
   dateStringToEuropeanDate,
-} from '../helpers';
+} from '../../helpers';
 
 @Component({
   selector: 'event',
