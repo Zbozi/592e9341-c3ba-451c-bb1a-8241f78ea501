@@ -2,6 +2,13 @@
 
 Event shop
 
+## Start app
+
+```console
+cd 592e9341-c3ba-451c-bb1a-8241f78ea501
+ng serve
+```
+
 ## Todo
 
 - Decide on Techstack
