@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Event } from '../store/models/event';
+import { Event } from '../state/models/event';
 import {
   dateStringToDoubleDigitTime,
   dateStringToEuropeanDate,

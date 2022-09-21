@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { groupBy } from 'lodash';
+import { filter, groupBy, includes } from 'lodash';
 
 import { Event } from './models/event';
 
@@ -30,7 +30,7 @@ export const selectEventGroupsByDate = createSelector(
   selectEvents,
   (events) => {
     let data = new Set(events.map((item) => new Date(item.date)));
-    console.log(data);
+    //console.log(data);
     let resultData = [];
     data.forEach((date) => {
       resultData.push({
@@ -38,7 +38,7 @@ export const selectEventGroupsByDate = createSelector(
         events: events.filter((i) => new Date(i.date) === date),
       });
     });
-    console.log(resultData);
+    //console.log(resultData);
     return resultData;
   }
 );
@@ -48,7 +48,14 @@ export const selectEventGroupsByDateLoDash = createSelector(
   selectEvents,
   (events) => {
     let groupedEvents = groupBy(events, 'date');
-    console.log(groupedEvents);
+    //console.log(groupedEvents);
     return groupedEvents;
   }
 );
+
+export const selectEeventsByTitle = (titleSearch) =>
+  createSelector(selectEvents, (events) => {
+    let filteredEvents = filter(events, 'title'.includes(titleSearch));
+    console.log(filteredEvents);
+    return filteredEvents;
+  });

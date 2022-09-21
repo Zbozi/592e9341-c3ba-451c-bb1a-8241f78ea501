@@ -1,0 +1,62 @@
+.spacer 
+        flex: 1
+    
+
+.toolbar 
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 20000
+    height: 60px
+    display: flex
+    align-items: center
+    background-color: #1976d2
+    color: white
+    font-weight: 600
+    overflow: hidden
+    width: 100%
+    
+
+.toolbar img 
+    margin: 0 16px
+ 
+
+.toolbar #shopping-cart-logo
+    height: 40px
+    margin: 0 16px
+
+
+.toolbar #shopping-cart-logo:hover
+    opacity: 0.8
+
+
+.searchbar
+    margin: 0 16px 0 16px
+    outline: none
+    border: none
+    background-color: #1a9afc
+    border-radius: 4px
+    line-height: 1.7em
+    width: 170px
+    padding: 10px 30px
+    color: #fff
+
+.searchbar::placeholder
+    color: #fff
+
+
+.toolbar label 
+  position: relative
+
+
+.toolbar label:before 
+  content: ""
+  position: absolute
+  left: 10px
+  top: 0
+  bottom: 0
+  width: 20px
+  background: url('../../../assets/search.png') center contain no-repeat
+
+

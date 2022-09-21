@@ -3,13 +3,13 @@ import { select, Store } from '@ngrx/store';
 import { Observable, from, of, zip } from 'rxjs';
 import { groupBy, mergeMap, toArray, mergeAll } from 'rxjs/operators';
 
-import { invokeEventsAPI } from '../store/events.action';
+import { invokeEventsAPI } from '../state/events.action';
 import {
   selectEventGroupsByDate,
   selectEvents,
   selectShoppingCart,
   selectEventGroupsByDateLoDash,
-} from '../store/events.selector';
+} from '../state/events.selector';
 
 @Component({
   selector: 'event-list',

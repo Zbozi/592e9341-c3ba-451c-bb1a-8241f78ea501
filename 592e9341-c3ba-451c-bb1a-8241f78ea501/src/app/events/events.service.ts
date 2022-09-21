@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map, groupBy } from 'rxjs/operators';
 
 import { apiUrl } from '../config.service';
-import { Event } from './store/models/event';
+import { Event } from './state/models/event';
 
 @Injectable({
   providedIn: 'root',
