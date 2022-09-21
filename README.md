@@ -1,6 +1,6 @@
 # 592e9341-c3ba-451c-bb1a-8241f78ea501
 
-event shop
+Event shop
 
 ## Todo
 
@@ -12,7 +12,6 @@ event shop
 
 - Dataformat
 - Initialize Techstack
-- TDD Feature development
 - README how to start Application
 
 ## Technologie Research
@@ -54,7 +53,7 @@ event shop
 
 ### Addiotional Ideas
 
-    - Picture formation: Zoom in flyer if not protrait?
+    - Picture formation: Zoom in flyer if not portrait?
     - Show date if no start and end date, use ngif?
 
     - pagination => autoscroll?
